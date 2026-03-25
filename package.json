@@ -45,6 +45,7 @@
                     "vendor/**/*",
                     "artisan",
                     ".env",
+                    "composer.json",
                     "!node_modules",
                     "!tests",
                     "!storage/logs/*"
