@@ -1,7 +1,7 @@
 {
-    "name": "k24",
+    "name": "desktopapp",
     "version": "1.0.0",
-    "description": "Sistema contable K24",
+    "description": "Descripción de la app",
     "author": "JMCP",
     "$schema": "https://www.schemastore.org/package.json",
     "private": true,
@@ -16,8 +16,8 @@
         "dist": "electron-builder"
     },
     "build": {
-        "appId": "com.k24.app",
-        "productName": "K24",
+        "appId": "com.mycompany.myapp",
+        "productName": "laravelElectronApp",
         "directories": {
             "output": "dist"
         },
@@ -34,7 +34,7 @@
             },
             {
                 "from": ".",
-                "to": "k24",
+                "to": "app",
                 "filter": [
                     "app/**/*",
                     "bootstrap/**/*",
