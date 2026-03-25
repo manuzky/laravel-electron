@@ -1,0 +1,78 @@
+{
+    "name": "k24",
+    "version": "1.0.0",
+    "description": "Sistema contable K24",
+    "author": "JMCP",
+    "$schema": "https://www.schemastore.org/package.json",
+    "private": true,
+    "type": "module",
+    "main": "desktop/main.cjs",
+    "scripts": {
+        "dev": "vite",
+        "start": "electron .",
+        "build": "vite build",
+        "dist": "electron-builder"
+    },
+    "build": {
+        "appId": "com.k24.app",
+        "productName": "K24",
+        "directories": {
+            "output": "dist"
+        },
+        "asar": true,
+        "files": [
+            "desktop/**/*",
+            "node_modules/**/*",
+            "package.json"
+        ],
+        "extraResources": [
+            {
+                "from": "php",
+                "to": "php"
+            },
+            {
+                "from": ".",
+                "to": "k24",
+                "filter": [
+                    "app/**/*",
+                    "bootstrap/**/*",
+                    "config/**/*",
+                    "database/**/*",
+                    "public/**/*",
+                    "resources/**/*",
+                    "routes/**/*",
+                    "storage/**/*",
+                    "vendor/**/*",
+                    "artisan",
+                    ".env",
+                    "!node_modules",
+                    "!tests",
+                    "!storage/logs/*"
+                ]
+            }
+        ],
+        "win": {
+            "target": "nsis",
+            "icon": "build/icon.ico"
+        },
+        "nsis": {
+            "oneClick": true,
+            "perMachine": false,
+            "allowToChangeInstallationDirectory": false
+        }
+    },
+    "devDependencies": {
+        "@tailwindcss/forms": "^0.5.2",
+        "@tailwindcss/vite": "^4.0.0",
+        "alpinejs": "^3.4.2",
+        "autoprefixer": "^10.4.2",
+        "axios": "^1.11.0",
+        "concurrently": "^9.0.1",
+        "electron": "^41.0.4",
+        "electron-builder": "^26.8.1",
+        "laravel-vite-plugin": "^3.0.0",
+        "postcss": "^8.4.31",
+        "tailwindcss": "^3.1.0",
+        "vite": "^8.0.0"
+    }
+}
