@@ -16,7 +16,7 @@
         "dist": "electron-builder"
     },
     "build": {
-        "appId": "com.mycompany.myapp",
+        "appId": "com.application.app",
         "productName": "laravelElectronApp",
         "directories": {
             "output": "dist"

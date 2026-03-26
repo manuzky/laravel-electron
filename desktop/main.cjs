@@ -11,7 +11,7 @@ const HOST = '127.0.0.1';
 let PORT = 8000;
 
 // 📄 LOG EN PRODUCCIÓN
-const logFile = path.join(app.getPath('userData'), 'k24-log.txt');
+const logFile = path.join(app.getPath('userData'), 'app-log.txt');
 function log(msg) {
     try {
         fs.appendFileSync(logFile, `[${new Date().toISOString()}] ${msg}\n`);
@@ -104,7 +104,7 @@ function createWindow(url) {
     });
 
     mainWindow.webContents.on('did-fail-load', () => {
-        mainWindow.loadURL('data:text/html,<h2>No se pudo conectar a Laravel</h2><p>Revisa el log: k24-log.txt</p>');
+        mainWindow.loadURL('data:text/html,<h2>No se pudo conectar a Laravel</h2><p>Revisa el log: app-log.txt</p>');
     });
 
     mainWindow.loadURL(url);
@@ -133,7 +133,7 @@ app.whenReady().then(async () => {
 
     const laravelBasePath = isDev
         ? path.join(__dirname, '..')
-        : path.join(process.resourcesPath, 'k24');
+        : path.join(process.resourcesPath, 'app');
 
     const publicPath = path.join(laravelBasePath, 'public');
 
@@ -152,7 +152,7 @@ app.whenReady().then(async () => {
     const started = startPHPServer(PORT, phpPath, publicPath);
 
     if (!started) {
-        createWindow('data:text/html,<h1>Error iniciando PHP</h1><p>Revisa k24-log.txt</p>');
+        createWindow('data:text/html,<h1>Error iniciando PHP</h1><p>Revisa app-log.txt</p>');
         return;
     }
 
