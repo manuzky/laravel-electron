@@ -10,7 +10,7 @@
     "scripts": {
         "dev": "vite",
         "start": "electron .",
-        "app": "concurrently -k -n server,client \"php artisan serve\" \"npm run dev\"",
+        "app": "concurrently \"php artisan serve\" \"npm run dev\"",
         "build": "vite build",
         "predist": "npm run build",
         "dist": "electron-builder"
