@@ -22,9 +22,15 @@
             "output": "dist"
         },
         "asar": true,
+
+        "asarUnpack": [
+            "php/**/*"
+        ],
+
+        "compression": "maximum",
+
         "files": [
             "desktop/**/*",
-            "node_modules/**/*",
             "package.json"
         ],
         "extraResources": [
@@ -43,11 +49,13 @@
                     "public/**/*",
                     "resources/**/*",
                     "routes/**/*",
-                    "storage/**/*",
+                    "storage/app/**/*",
+                    "storage/framework/**/*",
                     "vendor/**/*",
                     "artisan",
                     ".env",
                     "composer.json",
+
                     "!node_modules",
                     "!tests",
                     "!storage/logs/*"
