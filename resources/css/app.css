@@ -1,3 +1,11 @@
+@import './loader.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Botón de cerrar sesión */
+.btn-logout:hover {
+    background-color: crimson !important;
+    color: white !important;
+    transition: background-color 0.3s ease; /* Para que el cambio sea suave */
+}

@@ -1,4 +1,4 @@
-.loader{
+.loader {
     position: fixed;
     top: 0;
     left: 0;
@@ -11,26 +11,27 @@
     transition: opacity 0.75s, visibility 0.75s;
 }
 
-.loader-hidden{
+.loader-hidden {
     opacity: 0;
     visibility: hidden;
 }
 
-.loader::after{
-    content: "";
-    width: 75px;
-    height: 75px;
-    border: 15px solid #dddddd;
-    border-top-color: #7449f5;
-    border-radius: 50%;
-    animation: loading 0.75s ease infinite;
+/* AQUÍ ESTÁ EL CAMBIO */
+.loader::after {
+   content: "";
+   width: 56px;
+   height: 26.9px;
+   background: radial-gradient(circle closest-side,#474bff 90%,#0000) 0%   50%,
+              radial-gradient(circle closest-side,#474bff 90%,#0000) 50%  50%,
+              radial-gradient(circle closest-side,#474bff 90%,#0000) 100% 50%;
+   background-size: calc(100%/3) 13.4px;
+   background-repeat: no-repeat;
+   animation: dots-7ar3yq 1s infinite linear;
 }
 
-@keyframes loading {
-    from{
-        transform: rotate(0turn);
-    }
-    to{
-        transform: rotate(1turn);
-    }
+@keyframes dots-7ar3yq {
+   20% { background-position: 0% 0%, 50% 50%, 100% 50%; }
+   40% { background-position: 0% 100%, 50% 0%, 100% 50%; }
+   60% { background-position: 0% 50%, 50% 100%, 100% 0%; }
+   80% { background-position: 0% 50%, 50% 50%, 100% 100%; }
 }
